@@ -20,8 +20,9 @@ let server;
 (async () => {
   let adapter;
   if (process.env.MONGODB_URI) {
-    adapter = require('./adapters/mongodb'); // eslint-disable-line global-require
-    await adapter.connect();
+    // adapter = require('./adapters/mongodb'); // eslint-disable-line global-require
+    // await adapter.connect();
+    adapter = require('./my_adapter');
   }
 
   const provider = new Provider(ISSUER, { adapter, ...configuration });
